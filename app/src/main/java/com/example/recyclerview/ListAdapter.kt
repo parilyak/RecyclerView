@@ -12,18 +12,21 @@ class ListAdapter(private val list: List<Thing>): RecyclerView.Adapter<ThingView
         val inflater = LayoutInflater.from(parent.context)
         return when(viewType) {
             333 -> BookViewHolder(inflater, parent)
+            444 -> GameViewHolder(inflater, parent)
+            555 -> MovieViewHolder(inflater, parent)
             else -> MovieViewHolder(inflater, parent)
         }
     }
 
     override fun onBindViewHolder(holder: ThingViewHolder, position: Int) {
         val thing= list[position]
-        holder.bind(thing as Thing)
+        holder.bind(thing)
     }
 
     override fun getItemViewType(position: Int): Int {
-//        TODO: if item on a position is Book, return 333 else 404
-//        TODO: Add game xml with an image, for a book change places title and name - 3 xmls views
-        return if (position % 2 == 0) 333 else 404
+        if (list[position] is Book) return 333
+        if (list[position] is Game) return 444
+        return if (list[position] is Movie) 555
+        else 404
     }
 }

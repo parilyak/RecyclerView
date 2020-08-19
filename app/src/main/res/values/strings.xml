@@ -1,5 +1,11 @@
 <resources>
-    <string name="app_name">Nicolas Cage\'s Movies</string>
-    <string name="title">Title</string>
-    <string name="description">Description</string>
+    <string name="app_name">Movies, Books, Games</string>
+
+    <string name="movie_title">Movie\'s title</string>
+    <string name="book_title">Book\'s title</string>
+    <string name="game_title">Game\'s title</string>
+
+    <string name="movie_year">Year</string>
+    <string name="book_author">Author</string>
+    <string name="game_description">Game Description</string>
 </resources>
